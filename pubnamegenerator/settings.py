@@ -25,8 +25,11 @@ SECRET_KEY = '__s9h7!y&$p^o)yd_eg$!g2co!xo(3fj+eiy#buo5p31&2v@ac'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -101,4 +104,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'pubnamegenerator', 'static')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'pubnamegenerator', 'static')]
