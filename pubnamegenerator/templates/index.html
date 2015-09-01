@@ -10,10 +10,11 @@
 
         <link rel="stylesheet" href="{% static "css/normalize.css" %}">
         <link rel="stylesheet" href="{% static "css/main.css" %}">
+        <link rel="stylesheet" href="{% static "css/styles.css" %}">
     </head>
     <body>
         <header>
-            <h1>Pub name generator</h1>
+            <h1>Pub Name Generator</h1>
             <p>
                 So, you want to open your pub, but have no idea how to name it?
                 This site can help you! Here, a pub name for you:
@@ -21,7 +22,7 @@
         </header>
 
         <main>
-            <p>{{ pub_name }}</p>
+            <p class="pub-name">{{ pub_name }}</p>
         </main>
 
         <footer>
