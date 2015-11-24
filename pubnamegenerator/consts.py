@@ -45,7 +45,7 @@ THINGS = [
     'Prison',
     'Recruiter',
     'Rose',
-    'Scottman',
+    'Scotsman',
     'Shakespeare',
     'Ship',
     'Spaniard',
