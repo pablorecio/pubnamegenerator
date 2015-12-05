@@ -1,9 +1,8 @@
 
-from django.conf.urls import url
+from django.conf.urls import patterns, url
 
-from .views import IndexView
-
-
-urlpatterns = [
-    url(r'^$', IndexView.as_view()),
-]
+urlpatterns = patterns(
+    'pubnamegenerator.views',
+    url(r'^$', 'main', name='main'),
+    url(r'^api/pub$', 'api', name='api'),
+)

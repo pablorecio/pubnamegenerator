@@ -1,14 +1,10 @@
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from django.http import JsonResponse
 
 from .generator import generate_pub_name
 
+def main(request):
+    return render(request, 'index.html')
 
-class IndexView(TemplateView):
-    template_name = 'index.html'
-
-    def get_context_data(self, *args, **kwargs):
-        ctx = super(IndexView, self).get_context_data(*args, **kwargs)
-        ctx.update({
-            'pub_name': generate_pub_name(),
-        })
-        return ctx
+def api(request):
+    return JsonResponse({'name': generate_pub_name()})
