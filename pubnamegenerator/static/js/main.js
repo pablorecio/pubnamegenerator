@@ -13,7 +13,8 @@ var getPubName = function() {
 
 window.onload = function() {
 	var button = document.getElementById('another-pub');
-	button.addEventListener('click', function() {
+	button.addEventListener('click', function(event) {
+		event.preventDefault();
 		getPubName();
 	});
 
