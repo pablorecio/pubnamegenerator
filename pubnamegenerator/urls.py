@@ -1,8 +1,10 @@
 
 from django.conf.urls import patterns, url
 
+from . import views
+
 urlpatterns = patterns(
     'pubnamegenerator.views',
-    url(r'^$', 'main', name='main'),
-    url(r'^api/pub$', 'api', name='api'),
+    url(r'^$', views.MainView.as_view(), name='main'),
+    url(r'^api/pub$', views.APIView.as_view(), name='api'),
 )
